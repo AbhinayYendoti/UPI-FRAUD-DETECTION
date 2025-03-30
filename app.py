@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 import tensorflow as tf
 from flask import Flask, request, render_template
+import gdown
 
 dataset = pd.read_csv('dataset/upi_fraud_dataset.csv', index_col=0)
 
@@ -12,7 +13,22 @@ y = dataset.iloc[:, 10].values
 scaler = StandardScaler()
 scaler.fit_transform(x)
 
-model = tf.keras.models.load_model('filesuse\project_model1.h5')
+# [ 
+
+# https://drive.google.com/file/d/1r_OVFE0Qi7t4cbnOHoPTC3F0NKuRf3LB/view?usp=sharing
+
+file_id = "1r_OVFE0Qi7t4cbnOHoPTC3F0NKuRf3LB"  # Replace with your actual file ID
+output_path = "filesuse/project_model1.h5"  # Adjust to match expected path
+
+# Download the file
+gdown.download(f"https://drive.google.com/uc?id={file_id}", output_path, quiet=False)
+
+print("Model downloaded successfully!")
+
+# ] 
+
+
+# model = tf.keras.models.load_model('filesuse\project_model1.h5')
 
 app = Flask(__name__)
 
