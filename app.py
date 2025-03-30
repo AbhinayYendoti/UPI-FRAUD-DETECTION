@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
@@ -28,7 +29,7 @@ print("Model downloaded successfully!")
 # ] 
 
 
-# model = tf.keras.models.load_model('filesuse\project_model1.h5')
+model = tf.keras.models.load_model('filesuse\project_model1.h5')
 
 app = Flask(__name__)
 
@@ -87,4 +88,5 @@ def detect():
     return render_template('result.html', OUTPUT='{}'.format(result))
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 5000))  # Render assigns a port dynamically
+    app.run(host="0.0.0.0", port=port)
