@@ -18,13 +18,13 @@ scaler.fit_transform(x)
 
 # https://drive.google.com/file/d/1r_OVFE0Qi7t4cbnOHoPTC3F0NKuRf3LB/view?usp=sharing
 
-file_id = "1r_OVFE0Qi7t4cbnOHoPTC3F0NKuRf3LB"  # Replace with your actual file ID
-output_path = "filesuse/project_model1.h5"  # Adjust to match expected path
+# file_id = "1r_OVFE0Qi7t4cbnOHoPTC3F0NKuRf3LB"  # Replace with your actual file ID
+# output_path = "filesuse/project_model1.h5"  # Adjust to match expected path
 
-# Download the file
-gdown.download(f"https://drive.google.com/uc?id={file_id}", output_path, quiet=False)
+# # Download the file
+# gdown.download(f"https://drive.google.com/uc?id={file_id}", output_path, quiet=False)
 
-print("Model downloaded successfully!")
+# print("Model downloaded successfully!")
 
 # ] 
 
@@ -90,3 +90,5 @@ def detect():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render assigns a port dynamically
     app.run(host="0.0.0.0", port=port)
+
+
