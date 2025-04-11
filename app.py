@@ -17,7 +17,6 @@ model = tf.keras.models.load_model('filesuse\project_model1.h5')
 
 app = Flask(__name__)
 
-
 @app.route('/')
 @app.route('/first')
 def first():
